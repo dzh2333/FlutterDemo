@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/listview/ListViewTest.dart';
-import 'package:flutterdemo/listview/SingleChildScrollListView.dart';
-import 'package:flutterdemo/listview/GridViewTest.dart';
-import 'package:flutterdemo/ui/ListViewPage.dart';
+import 'package:flutterdemo/ui/listview/GridViewPage.dart';
+import 'package:flutterdemo/ui/listview/ListViewPage.dart';
+import 'package:flutterdemo/ui/net/FrameNetRequestPage.dart';
+import 'package:flutterdemo/ui/pic/LocalPicPage.dart';
+import 'package:flutterdemo/ui/pic/NetPicLoadPage.dart';
 import 'package:flutterdemo/ui/route/NewRouteAndRemoveUntilPage.dart';
 import 'package:flutterdemo/ui/route/NewRouteAndReplacePage.dart';
 import 'package:flutterdemo/ui/route/NewRouteOnGeneratePage.dart';
@@ -23,6 +23,18 @@ class TestOne extends StatelessWidget {
         "/NewRouteParameterPage": (context) => NewRouteParameterPage(),
         "/NewRouteAndReplacePage": (context) => NewRouteAndReplacePage(),
         "/NewRouteAndRemoveUntilPage": (context) => NewRouteAndRemoveUntilPage(),
+        //ListView
+        "/ListViewPage": (context) => GridViewPage(),
+        "/GridViewPage": (context) => ListViewPage(),
+
+        //Net Res Load
+        "/NetPicLoadPage" :  (context) => NetPicLoadPage(),
+        "/LocalPicLoadPage" :  (context) => LocalPicLoadPage(),
+        "/LocalPicLoadPage" :  (context) => LocalPicLoadPage(),
+
+        //Net Request
+        "/FrameNetRequestPage" :  (context) => FrameNetRequestPage(),
+
       },
       onGenerateRoute: (RouteSettings settings){
         WidgetBuilder builder;
@@ -88,6 +100,33 @@ class MainPage extends StatelessWidget {
           RaisedButton(onPressed: () async {
             Navigator.pushNamed(context, "/signup/personal_info");
           }, child: Text("onGenerateRoute"),
+          ),
+
+          //ListView
+          RaisedButton(onPressed: () async {
+            Navigator.pushNamed(context, "/GridViewPage");
+          }, child: Text("GridView"),
+          ),
+          RaisedButton(onPressed: () async {
+            Navigator.pushNamed(context, "/ListViewPage");
+          }, child: Text("ListView"),
+          ),
+
+          //NetResLoad
+          RaisedButton(onPressed: () async {
+            Navigator.pushNamed(context, "/NetPicLoadPage");
+          }, child: Text("网络图片加载"),
+          ),
+          RaisedButton(onPressed: () async {
+            Navigator.pushNamed(context, "/LocalPicLoadPage");
+          }, child: Text("本地图片加载"),
+          ),
+
+
+          //框架网络请求   https://github.com/flutterchina/dio
+          RaisedButton(onPressed: () async {
+            Navigator.pushNamed(context, "/FrameNetRequestPage");
+          }, child: Text("使用框架网络请求"),
           ),
         ],
       ),

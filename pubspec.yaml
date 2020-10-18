@@ -13,15 +13,26 @@ description: A new Flutter application.
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+analyzer:
+  strong-mode: true
+  language:
+    enableSuperMixins: true
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-#从pub上下载依赖
   cupertino_icons: ^0.1.2
   english_words: ^3.1.3
+  dio: ^3.0.0
+
+#网络请求框架
+
 #git方式下载第三方库
 #  flare_flutter:
 #    git:
@@ -31,17 +42,14 @@ dependencies:
 #  flutter_localizations:
 #    sdk:
 
-#dev时依赖
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
 flutter:
   uses-material-design: true
 
 #图片
-assets:
-  - assets/pic1.png
+#可以使用导入文件夹，但是二级文件夹需要手动导入 - assets/pic/
+  assets:
+    - assets/
+    - images/pic1.png
 
 #增加字体文件
 #fonts:

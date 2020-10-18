@@ -1,12 +1,12 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-class InFiniteListView extends StatefulWidget{
+class ListViewTest extends StatefulWidget{
   @override
   _InfiniteListViewState createState() => new _InfiniteListViewState();
 }
 
-class _InfiniteListViewState extends State<InFiniteListView>{
+class _InfiniteListViewState extends State<ListViewTest>{
   static const loadingTag = "##loading";
   var _words = <String>[loadingTag];
 
