@@ -10,7 +10,6 @@ class _InfiniteListViewState extends State<ListViewTest>{
   static const loadingTag = "##loading";
   var _words = <String>[loadingTag];
 
-
   @override
   void initState() {
     _retrieveData();
